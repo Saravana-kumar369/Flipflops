@@ -43,14 +43,85 @@ In T flip flop, "T" defines the term "Toggle". In SR Flip Flop, we provide only 
 
 
 ## Program:
+### SR FLIPFLOP
+```
+module Ex5(s,r,clk,q,qbar);
+input s,r,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+	q=s|((~r)&q);
+end
+assign qbar=~q;
+endmodule
+```
+### D FLIPFLOP
+```
+module Ex5b(d,clk,q,qbar);
+input d,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+  q=d;
+end
+assign qbar=~q;
+endmodule  
+```
 
+### JK FLIPFLOP
+```
+module Exp5c(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q;
+output qbar;
+always@ (posedge clk)
+begin 
+  q=(((~q)&j)|((~k)&q));
+end
+assign qbar=(~q);
+endmodule  
+```
+### T FLIPFLOP
+```
+module Exp5d(t,clk,q,qbar);
+input t,clk;
+output reg q;
+output qbar;
+always@ (posedge clk)
+begin 
+ q=(((~q)&t)|((~t)&q));
+end
+assign qbar=~q;
+endmodule
+```
 
 ## RTL Schematic:
+### SR FLIPFLOP
+![Screenshot (125)](https://github.com/Saravana-kumar369/Flipflops/assets/117925254/e703801f-074e-4b1c-8d04-dba85b454903)
 
+### D FLIPFLOP
+![Screenshot (139)](https://github.com/Saravana-kumar369/Flipflops/assets/117925254/f8eb13bc-4384-4999-9ee6-a93979658b73)
 
+### JK FLIPFLOP
+![Screenshot (149)](https://github.com/Saravana-kumar369/Flipflops/assets/117925254/c13d525c-f0e1-444c-b587-fd5c9fe30be1)
 
+### T FLIPFLOP
+![Screenshot (151)](https://github.com/Saravana-kumar369/Flipflops/assets/117925254/12f5c4e8-d263-4c9d-b60a-4bf3e5c04dd9)
 
 ## Timing Diagram:
+### SR FLIPFLOP
+![Screenshot (126)](https://github.com/Saravana-kumar369/Flipflops/assets/117925254/b72a625b-0df3-4a92-b8a0-9898eb0c68ae)
+
+### D FLIPFLOP
+![Screenshot (140)](https://github.com/Saravana-kumar369/Flipflops/assets/117925254/9f40f12d-ef3d-4e6d-8a59-17471d0f81d3)
+
+### JK FLIPFLOP
+![Screenshot (150)](https://github.com/Saravana-kumar369/Flipflops/assets/117925254/c3aafb8a-c1dd-465f-b3c7-3875205cdebc)
+
+### T FLIPFLOP
+![Screenshot (152)](https://github.com/Saravana-kumar369/Flipflops/assets/117925254/0f32c76c-99e5-44b2-91f4-692f1f0fbe08)
 
 
 
